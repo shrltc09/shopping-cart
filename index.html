@@ -1,87 +1,181 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>My First layout</title>
+	<link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+	<link rel="icon" href="logo.jpg" type="image/x-icon">
+	<title>
+		Furncart
+	</title>
 	<meta charset="utf-8">
    	<meta name="viewport" content="width=device-width, initial-scale=1">
-   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	   	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="inf.css">
+	<script type="text/javascript">
+	var image_tracker='raj';
+		function change()
+	{
+		var image = document.getElementById('image');
+		if(image_tracker == 'raj')
+		{
+		image.src= "raj1.jpg"
+		image_tracker= 't';
+		}
+		else if (image_tracker == "t") {
+			image.src = "raj.jpg"
+			image_tracker = 'raj';
+		}
+	}
+	var time=setInterval('change()',2000);
+	</script>
 </head>
-<body>
-<div class="container-fluid bg-1">
-	
-   		 <img src="mpl.jpg" alt="logo" width="100" height="120" class="img-thumbnail">
-    		<div class="navbar text-center"><div class="na1">SHOPPING CART</div></div>
-    			<nav class="nav">
-    			<!--navigation menu-->
-    				<ul>
-    				<li><a href="#">Home</a></li>
-    				<li><a href="#">Cart</a></li>
-    				<li><a href="#">Contact</a></li>
-    				<li><a href="#">About Us</a></li>
-    				</ul>	
-   				 </nav>
-	
-</div>
-<div class="container-fluid">
-<div class="row bg-5">
-	<div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2">
-		<aside class="left"></br>
-			<h5 class="h1">CATEGORIES</h5>
-				<nav class="nav1">
-					<ul>
-						<li><a href="#">Kitchen</a></li>
-    					<li><a href="#">Bed Room</a></li>
-    					<li><a href="#">Living Room</a></li>
-    					<li><a href="#">Bathroom</a></li>
-    					<li><a href="#">Corridor</a></li>
-					</ul>
-				</nav>
+<body ng-app>
+	<header class="container-fluid row">
+		<div class="text-center col-sm-12 col-xs-12 col-md-2 col-lg-2">
+			<img src="mpl.jpg" class="logo" width="100px" height="100px">
+		</div>
+		<div>
+			<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6 text-center form">
+				<form action="" method="post" class="form1">
+					<input type="search" name="" placeholder="search here" class="searc">
+					<input type="button" name="" value="    " class="button">
+				</form>
+			</div>
+			<div class="col-sm-6 col-xs-12 col-md-4 col-lg-4 text-center">
+				<form action="" method="post" class="form2">
+					<input type="button" name="" value="Wishlist" class="button0">
+					<input type="button" name="" value="Your Cart" class="button0">
+					<input type="button" name="" value="Your orders" class="button0">
+					<input type="button" name="" value="LOGIN" class="button0" id="login" onclick="document.getElementById('loger').style.display='block'" style="width:auto;">
+				</form>
+			</div>
+		</div>
+		<div id="loger" class="layout text-center">
+		    <h1 class="heading">Login Form</h1>
+
+		    <form action="Second_page.html" method="post" class="logform">
+		      <div class="imgcontainer">
+		        <img src="mpl.jpg" alt="logo" class="log" width="100px" height="100px">
+		      </div>
+
+		      <div class="container1">
+		        <label class="lab"><b>Username</b></label>
+		        <input type="text" placeholder="Enter Username" name="uname" ng-model="name" required>
+
+		        <label class="lab"><b>Password</b></label>
+		        <input type="password" placeholder="Enter Password" name="psw" ng-model="pass" required>
+		            
+		        <button type="submit" ng-disabled="!name || !pass" class="butt1" title="login" id="butter">Login</button>
+		        <!--<input type="checkbox" checked="checked"> Remember me-->
+		      </div>
+
+		      <div class="container1 bgcl text-center">
+		      <div class="clearfix">
+		      	 <button type="button" class="signupbtn" onclick="document.getElementById('register').style.display='block'">Sign Up</button>
+		        <button type="button" class="cancelbtn butt" onclick="document.getElementById('loger').style.display='none'">Cancel</button>
+		       </div>
+		        <span class="psw">Forgot <a href="#">password?</a></span>
+		      </div>
+		    </form>
+		</div>
+		<div id="register" class="layout text-center">
+				<div class="heading2"><h2>Registration</h2><br></div>
+			<form action="Second_page.html" style="border:1px solid #ccc" class="logform">
+			  <div class="container1">
+			    <label class="lab"><b>Email</b></label>
+			    <input type="text" placeholder="Enter Email" name="email" ng-model="email1" required>
+
+			    <label class="lab"><b>Password</b></label>
+			    <input type="password" placeholder="Enter Password" name="psw" ng-model="pass1" required>
+
+			    <label class="lab"><b>Repeat Password</b></label>
+			    <input type="password" placeholder="Repeat Password" name="psw-repeat" ng-model="pass2" required>
+			   <!-- <input type="checkbox" checked="checked"> Remember me
+			    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
+
+			    <div class="clearfix">
+			    <button type="submit" ng-disabled = "!email1 || !pass1 || !pass2" class="signupbtn">Sign Up</button>
+			      <button type="button" class="cancelbtn" onclick="document.getElementById('register').style.display='none'">Cancel</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+	</header>
+	<section class="container-fluid row sec1">
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+			<img src="raj.jpg" alt="rajasthan" id="image" onclick="clearInterval(time)";> 
+		</div>
+	</section>
+	<div class="container-fluid row">
+		<aside class="col-sm-4 col-xs-4 col-md-4 col-lg-4 aside1 text-center">
+			<form class="form3">
+				<caption>CATEGORIES</caption><br><br>
+				<input type="button" value="Kitchen" name="" class="button1"><br><br>
+				<input type="button" value="Bedroom" name="" class="button1"><br><br>
+				<input type="button" value="Living room" name="" class="button1"><br><br>
+				<input type="button" value="Stairway" name="" class="button1"><br><br>
+				<input type="button" value="Corridor" name="" class="button1"><bbr>
+			</form>
 		</aside>
-	</div>
-
-
-	<div class=" bg-6 col-lg-8 col-md-8 col-sm-8 col-xs-8">
-		<div class="container-fluid bg-2">
-		<section>
-			<!--product images-->
-			<img src="raj.jpg" alt="raj" class="img-responsive" >	
+		<section class="col-sm-8 col-xs-8 col-md-8 col-lg-8 sec2">
+		&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</section>
-		</div>
-	
-	</br></br>
-	
-		<div class="jumbotron bg-3 text-center">
-		<article>
-			<h1>A Para of Lorem Ipsum</h1>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</article>
-		</div>
 	</div>
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-		<aside class="right">
-		<h5 class="h1">POPULAR</h5>
-		<nav class="nav2">
-		<ul>
-			<li><a href="#">Item 1</a></li>
-    		<li><a href="#">Item 2</a></li>
-    		<li><a href="#">Item 3</a></li>
-    		<li><a href="#">Item 4</a></li>
-    		<li><a href="#">Item 5</a></li>
-    		<li><a href="#">Item 6</a></li>
-    		<li><a href="#">Item 7</a></li>
-		</ul>
-		</nav>	
-		</aside>
-	</div>
-</div>
-</div>
-<link rel="stylesheet" type="text/css" href="styling.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<footer class="container-fluid bg-4 text-center"></br></br></footer>
+	<footer class="container-fluid row foot">
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 footdiv text-center">
+			&copy 2017
+		</div>
+	</footer>
+	<script>
+		// Get the modal
+		var modal = document.getElementById('loger');
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+	</script>
 </body>
 </html>
