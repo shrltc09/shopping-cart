@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+	<link rel="icon" href="logo.jpg" type="image/x-icon">
+	<title>
+		Furncart
+	</title>
+	<meta charset="utf-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+	   	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   <!-- Style The Contact Form How Ever You Prefer -->
+   <!--
+   <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">-->
+
+ <form id="gform" method="POST" class="pure-form pure-form-stacked"
+  action="https://script.google.com/macros/s/AKfycbx1faXsABtLyVZUdWLRNk1JIOk_iGwBPLEQrjTxfvIvI-9hQ6n9/exec">
+    <!-- change the form action to your script url -->
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="inf.css">
+	<script type="text/javascript">
+	var image_tracker='raj';
+		function change()
+	{
+		var image = document.getElementById('image');
+		if(image_tracker == 'raj')
+		{
+		image.src= "raj1.jpg"
+		image_tracker= 't';
+		}
+		else if (image_tracker == "t") {
+			image.src = "raj.jpg"
+			image_tracker = 'raj';
+		}
+	}
+	var time=setInterval('change()',2000);
+	</script>
+</head>
+<body ng-app>
+	<header class="container-fluid row">
+		<div class="text-center col-sm-12 col-xs-12 col-md-2 col-lg-2">
+			<img src="mpl.jpg" class="logo" width="100px" height="100px">
+		</div>
+		<div>
+			<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6 text-center form">
+				<form action="" method="post" class="form1">
+					<input type="search" name="" placeholder="search here" class="searc">
+					
+				</form>
+			</div>
+			<div class="col-sm-6 col-xs-12 col-md-4 col-lg-4 text-center">
+				<form action="" method="post" class="form2">
+					<input type="button" name="" value="Wishlist" class="button0">
+					<input type="button" name="" value="Your Cart" class="button0">
+					<input type="button" name="" value="Your orders" class="button0" onclick="document.getElementById('order').style.display='block'" style="width:auto;">
+					<input type="button" name="" value="LOGIN" class="button0" id="login" onclick="document.getElementById('loger').style.display='block'" style="width:auto;">
+				</form>
+			</div>
+		</div>
+		<div id="loger" class="layout text-center">
+		    <h1 class="heading">Login Form</h1>
+
+		    <form action="Second_page.html" method="post" class="logform">
+		      <div class="imgcontainer">
+		        <img src="mpl.jpg" alt="logo" class="log" width="100px" height="100px">
+		      </div>
+
+		      <div class="container1">
+		        <label class="lab"><b>Username</b></label>
+		        <input type="text" placeholder="Enter Username" name="uname" ng-model="name" required>
+
+		        <label class="lab"><b>Password</b></label>
+		        <input type="password" placeholder="Enter Password" name="psw" ng-model="pass" required>
+		            
+		        <button type="submit" ng-disabled="!name || !pass" class="butt1" title="login" id="butter">Login</button>
+		        <!--<input type="checkbox" checked="checked"> Remember me-->
+		      </div>
+
+		      <div class="container1 bgcl text-center">
+		      <div class="clearfix">
+		      	 <button type="button" class="signupbtn" onclick="document.getElementById('register').style.display='block'">Sign Up</button>
+		        <button type="button" class="cancelbtn butt" onclick="document.getElementById('loger').style.display='none'">Cancel</button>
+		       </div>
+		        <span class="psw">Forgot <a href="#">password?</a></span>
+		      </div>
+		    </form>
+		</div>
+		<div id="register" class="layout text-center">
+				<div class="heading2"><h2>Registration</h2><br></div>
+			<form action="Second_page.html" style="border:1px solid #ccc" class="logform">
+			  <div class="container1">
+			    <label class="lab"><b>Email</b></label>
+			    <input type="text" placeholder="Enter Email" name="email" ng-model="email1" required>
+
+			    <label class="lab"><b>Password</b></label>
+			    <input type="password" placeholder="Enter Password" name="psw" ng-model="pass1" required>
+
+			    <label class="lab"><b>Repeat Password</b></label>
+			    <input type="password" placeholder="Repeat Password" name="psw-repeat" ng-model="pass2" required>
+			   <!-- <input type="checkbox" checked="checked"> Remember me
+			    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
+
+			    <div class="clearfix">
+				    <button type="submit" ng-disabled = "!email1 || !pass1 || !pass2" class="signupbtn">Sign Up</button>
+				    <button type="button" class="cancelbtn" onclick="document.getElementById('register').style.display='none'">Cancel</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+		<div class="row layout text-center" id="order">
+			<!--<div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>-->
+			<div>
+				<!--<form id="gform" action="https://script.google.com/macros/s/AKfycbx1faXsABtLyVZUdWLRNk1JIOk_iGwBPLEQrjTxfvIvI-9hQ6n9/exec" name="payform" class="logform pure-form pure-form-stacked" method="post">
+				<div class="container1">
+					<div class="text-center">
+					<fieldset>
+					 <label class="lab">First name:<font color="red">*</font></label>
+ 					 <input type="text" ng-model="fname" name="firstname" class="text" autofocus required><br><br></fieldset>
+ 					 <fieldset>
+  					 <label class="lab">Last name:<font color="red">*</font></label>
+ 					 <input type="text" ng-model="lname" name="lastname" class="text" required><br><br></fieldset>
+ 					 	<fieldset class="pure-group">
+      <label for="email"><em>Your</em> Email Address:</label>
+      <input id="email" name="email" type="email" value=""
+      required placeholder="your.name@email.com"/>
+      <span id="email-invalid" style="display:none">
+        Must be a valid email address</span>
+    </fieldset>	
+ 					 <!--<fieldset>
+ 					 <label class="lab">Email ID:<font color="red">*</font></label>
+ 					 <input type="text" ng-model="email2" name="mailid" class="text"required><br><br></fieldset>-->
+ 					 <!--
+ 					 <fieldset>
+ 					 <label class="lab">Phone Number:<font color="red">*</font></label>
+ 					 <input type="text" ng-model="pno" name="phoneno" class="text"required><br><br></fieldset>
+ 					 <fieldset>
+ 					 <label class="lab">Mode of Payment:<font color="red">*</font></label>
+ 					</div>
+ 					 <div>
+ 					 <input type="radio" name="payment" value="Credit" checked class="radio1"><label class="lab">Credit Card</label><br>
+  					 <input type="radio" class="radio1" name="payment" value="Debit"><label class="lab">Debit Card</label><br>
+ 					 <input type="radio" name="payment" value="Netbanking" class="radio1"><label class="lab">Net Banking</label><br>
+ 					 <input type="radio" name="payment" value="COD" class="radio1"><label class="lab">Cash On Delivery</label><br><br></fieldset>
+ 					 </div>
+ 					 <label class="lab">Amount to be paid: </label> <br><br>
+ 					 <!--<div class="clearfix">
+					     <button type="button" ng-disabled="!fname || !lname || !pno || !email2" class="signupbtn" onclick="document.getElementById('redirect').style.display='block'">Submit</button>
+					     <button type="button" class="cancelbtn" onclick="document.getElementById('order').style.display='none'">Cancel</button>
+				     </div>-->
+				     <!--
+				     <button class="button-success pure-button button-xlarge">
+      <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+				</div>
+				</form>-->
+				<form id="gform" method="POST" class="pure-form pure-form-stacked logform"
+  action="https://script.google.com/macros/s/AKfycbx1faXsABtLyVZUdWLRNk1JIOk_iGwBPLEQrjTxfvIvI-9hQ6n9/exec">
+    <!-- change the form action to your script url -->
+
+    <div class="container1">
+          <div class="text-center">
+          <fieldset>
+           <label class="lab">First name:<font color="red">*</font></label>
+           <input type="text" ng-model="fname" name="firstname" class="text" autofocus required><br><br></fieldset>
+           <fieldset>
+             <label class="lab">Last name:<font color="red">*</font></label>
+           <input type="text" ng-model="lname" name="lastname" class="text" required><br><br></fieldset>
+           <fieldset class="pure-group">
+      <label for="email" class="lab"><em>Your</em> Email Address:</label>
+      <input id="email" ng-model="email2" name="email" type="text" class="text" value=""
+      required placeholder="your.name@email.com"/>
+      <span id="email-invalid" style="display:none">
+        Must be a valid email address</span>
+    </fieldset>
+           <fieldset>
+           <label class="lab">Phone Number:<font color="red">*</font></label>
+           <input type="text" ng-model="pno" name="phoneno" class="text"required><br><br></fieldset>
+           <fieldset>
+           <label class="lab">Mode of Payment:<font color="red">*</font></label>
+          </div>
+           <div>
+           <input type="radio" name="payment" value="Credit" checked class="radio1"><label class="lab">Credit Card</label><br>
+             <input type="radio" class="radio1" name="payment" value="Debit"><label class="lab">Debit Card</label><br>
+           <input type="radio" name="payment" value="Netbanking" class="radio1"><label class="lab">Net Banking</label><br>
+           <input type="radio" name="payment" value="COD" class="radio1"><label class="lab">Cash On Delivery</label><br><br></fieldset>
+           </div>
+           <label class="lab" ng-model="amount" >Amount to be paid: </label> <br><br>
+           <div class="clearfix">
+					     <button class="button-success pure-button button-xlarge signupbtn" ng-disabled="!fname || !lname || !pno || !email2" onclick="document.getElementById('redirect').style.display='block'">
+      <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+					     <button type="button" class="cancelbtn" onclick="document.getElementById('order').style.display='none'">Cancel</button>
+				     </div>
+        </div>
+
+  </form>
+
+  <!-- Customise the Thankyou Message People See when they submit the form: -->
+  <div style="display:none;" id="thankyou_message">
+    <h2><em>Thanks</em> for contacting us!
+      We will get back to you soon!</h2>
+  </div>
+  <script data-cfasync="false" type="text/javascript"
+  src="/form-submission-handler.js"></script>
+			</div>
+			<!--<div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>-->
+		</div>
+		<a href="#redirect"></a>
+		<div class="row layout1 text-center" id="redirect">
+		<div class="bg1 text-center container1">
+			<img src="tick.gif" class="load">
+			<h2>Your Payment has been Successfull!<br><br>If you wish to continue shopping click on continue </h2><br><br>
+			<button type="button" class="cancelbtn" onclick="window.location.reload()">Continue</button>
+		</div>
+		</div>
+	</header>
+	<section class="container-fluid row sec1">
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+			<img src="raj.jpg" alt="rajasthan" id="image" onclick="clearInterval(time)";> 
+		</div>
+	</section>
+	<div class="container-fluid row">
+		<aside class="col-sm-4 col-xs-4 col-md-4 col-lg-4 aside1 text-center">
+			<form class="form3">
+				<caption>CATEGORIES</caption><br><br>
+				<div>
+					<button type="button" name="" class="button1" onclick="document.getElementById('mk').style.display='inline'">Kitchen</button><br><br>
+						<section style="display: none;" id='mk' class="layout">
+							<div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 mod">
+							<img src="MK.jpg" alt="modular Kitchen" width="80%" height="400px">
+							</div>
+							<div class="col-sm-6 col-xs-12 col-md-2 col-lg-2" style="display: block;">
+								<h2 style="color: green; margin-left: 12px">Features</h2>
+								<ul style="color: white; margin-left: 8px;">
+									<li>Made of stainless steel</li>
+									<li>White</li>
+									<li>With drain board</li>
+									<li>Holders available</li>
+								</ul>
+							</div>
+							<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+							<h2 style="color: green; margin-left: 12px">Description</h2><br>
+								<p style="color: white; margin-right: 20px;">
+									
+									This two tier dish drainer keeps your surface dry after you have washed your plates. Water drops from dishes and falls on the plastic tray which is under the 2 layer dish drainer. It can be removed and cleaned separately. Includes cutlery holder section to keep your cutlery in one place. Made from chrome plated steel. Available in three colour options. Made of durable chrome plated steel High quality with lacquer Sanitary and simple to use Plastic tray equipped to hold water drops Fashionable design Size: 42.5cm (L) x 24.5cm (W) x 37.5cm (H). Set Includes: Dish rack, tumbler holder, cutlery caddy and drip tray Dishes not included Color will send randomly Assorted Colors
+								</p>
+								
+							</div>
+							<div class="container-fluid" style="clear: both;">
+							<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6" style="color: white; font-size: 20px;">
+								<table>
+								<col width="130">
+  								<col width="130">
+									<tr>
+										<td colspan="2">
+											Dimension
+										</td>
+									</tr>
+									<tr>
+										<td>Width  </td>
+										<td>   13.97 cm</td>
+									</tr>
+									<tr>
+										<td>Height  </td>
+										<td>  26.162 cm</td>
+									</tr>
+									<tr>
+										<td>Depth  </td>
+										<td>  44.45 cm</td>
+									</tr>
+									<tr>
+										<td>Weight  </td>
+										<td> 1450 g</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6" style="color: white">
+							<h2> General </h2>
+								<ul>
+									<li>Model Number  K159(White)</li>
+									<li>Dishwasher Safe   No</li>
+									<li>Foldable    No</li>
+									<li>Revolving Organiser   No</li>
+									<li>Hooks Present   No</li>
+									<li>Maximum Load    3 kg</li>
+									<li>Number of Racks    1</li>
+									<li>Sales Package   1 Dish Drainer</li>
+								</ul>
+							</div>
+						</div>
+						<div class="container-fluid" style="font-size: 2em; color: white" ng-bind="amount">
+						PRICE: RS 1500
+						</div>
+						<div class="clearfix">
+					     <button class="button-success pure-button button-xlarge signupbtn" onclick="document.getElementById('order').style.display='inline'">Buy Now</button>
+					     <button type="button" class="cancelbtn" onclick="document.getElementById('mk').style.display='none'">Cancel</button>
+				     </div>
+						</section>
+				</div>
+				<input type="button" value="Bedroom" name="" class="button1"><br><br>
+				<input type="button" value="Living room" name="" class="button1"><br><br>
+				<input type="button" value="Stairway" name="" class="button1"><br><br>
+				<input type="button" value="Corridor" name="" class="button1"><bbr>
+			</form>
+		</aside>
+		<section class="col-sm-8 col-xs-8 col-md-8 col-lg-8 sec2">
+		&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</section>
+	</div>
+	<footer class="container-fluid row foot">
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 footdiv text-center">
+			&copy 2017
+		</div>
+	</footer>
+	<!--<script>
+		// Get the modal
+		var modal = document.getElementById('loger');
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+	</script>-->
+</body>
+</html>
